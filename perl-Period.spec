@@ -14,6 +14,7 @@ URL: 		http://www.perl.com/CPAN/modules/by-module/Time/
 BuildArch:	noarch
 
 BuildRequires:	perl-devel
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-root/
 
 %description
 Period.pm is a Perl module that contains code to deal with time periods.
