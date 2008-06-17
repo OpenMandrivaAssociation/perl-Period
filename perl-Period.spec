@@ -1,5 +1,5 @@
 %define version	1.20
-%define release %mkrel 10
+%define release %mkrel 11
 %define name 	perl-Period
 %define realname Period
 
