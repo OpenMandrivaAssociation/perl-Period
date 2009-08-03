@@ -1,20 +1,18 @@
-%define version	1.20
-%define release %mkrel 12
-%define name 	perl-Period
-%define realname Period
+%define upstream_name    Period
+%define upstream_version 1.20
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Time::Period module for perl
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
 License: 	GPL
 Group: 		Development/Perl
-Source: 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Time/%{realname}-%{version}.tar.bz2
-URL: 		http://www.perl.com/CPAN/modules/by-module/Time/
-BuildArch:	noarch
+Url: 		http://search.perl.com/dist/%{upstream_name}
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Time/%{upstream_name}-%{upstream_version}.tar.bz2
 
-BuildRequires:	perl-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-root/
+BuildArch:	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Period.pm is a Perl module that contains code to deal with time periods.
@@ -28,7 +26,7 @@ year seconds past January 1, 1970, as per the time() function.  The period
 is a string which is of the form described in Period's man page.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 chmod 644 README Period.html
 
 %build
@@ -50,5 +48,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc Period.html README
 %{perl_vendorlib}/Time/*
 %{_mandir}/*/*
-
-
