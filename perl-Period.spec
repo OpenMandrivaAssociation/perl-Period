@@ -4,7 +4,7 @@
 Summary:	Time::Period module for perl
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	7
+Release:	8
 License:	GPLv2
 Group:		Development/Perl
 Url:		http://search.perl.com/dist/%{modname}
